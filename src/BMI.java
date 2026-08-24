@@ -28,7 +28,7 @@ void main (){
     if (bmi >= 40) return  "Adipositas / Fettsucht Grad III";
     if (bmi >= 35) return"Adipositas / Fettsucht Grad II";
     if (bmi>= 30) return "Adipositas / Fettsucht Grad I";
-    if (bmi >= 25) return "uebergewicht";
+    if (bmi >= 25) return "Uebergewicht";
     if (bmi>= 19)return  "Normalgewicht";
     return  "Unterrgewicht";
 }
