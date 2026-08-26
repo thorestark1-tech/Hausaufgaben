@@ -1,26 +1,26 @@
 
 void main() {
     Scanner sc = new Scanner(System.in);
-    IO.println("Willst du die erste Aufgabe Überspringen? (y)");
-    char überspringen = sc.next().toLowerCase().charAt(0);
+    IO.println("Willst du die erste Aufgabe ueberspringen? (y)");
+    char ueberspringen = sc.next().toLowerCase().charAt(0);
     char again='y';
-    while (überspringen != 'y'&&again == 'y') {
+    while (ueberspringen != 'y'&&again == 'y') {
             Aufgabe1(sc);
     IO.println("Again? (y/n)");
     again = sc.next().toLowerCase().charAt(0);
     }
-    überspringen = 'a';
-    IO.println("Willst du die zweite Aufgabe Überspringen? (y)");
-    überspringen = sc.next().toLowerCase().charAt(0);
-    while (überspringen != 'y'&&again=='y') {
+    ueberspringen = 'a';
+    IO.println("Willst du die zweite Aufgabe ueberspringen? (y)");
+    ueberspringen = sc.next().toLowerCase().charAt(0);
+    while (ueberspringen != 'y'&&again=='y') {
             Aufgabe2(sc);
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    überspringen = 'a';
-    IO.println("Willst du die dritte Aufgabe Überspringen? (y)");
-    überspringen = sc.next().toLowerCase().charAt(0);
-    while (überspringen != 'y'&&again=='y') {
+    ueberspringen = 'a';
+    IO.println("Willst du die dritte Aufgabe ueberspringen? (y)");
+    ueberspringen = sc.next().toLowerCase().charAt(0);
+    while (ueberspringen != 'y'&&again=='y') {
         Aufgabe3(sc);
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
@@ -58,7 +58,7 @@ void Aufgabe2 (Scanner sc){
 }
 void Aufgabe3(Scanner sc) {
     int monat,jahr,tag,maxTage;
-    boolean gültig =false;
+    boolean gueltig =false;
     IO.println("Tag: ");
     tag = sc.nextInt();
     IO.println("Monat: ");
@@ -74,11 +74,11 @@ void Aufgabe3(Scanner sc) {
             else maxTage=28;
         }
         default -> {
-            IO.println("Error, ungültiger Monat (1-12)");
+            IO.println("Error, ungueltiger Monat (1-12)");
             return;
         }
     }
-    if(tag>0&&tag<=maxTage)gültig=true;
-    if (gültig==true) IO.println("Gültiges Datum");
-    else IO.println("Ungültiges Datum");
+    if(tag>0&&tag<=maxTage)gueltig=true;
+    if (gueltig==true) IO.println("Gueltiges Datum");
+    else IO.println("Ungueltiges Datum");
 }
