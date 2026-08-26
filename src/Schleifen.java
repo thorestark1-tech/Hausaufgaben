@@ -1,3 +1,4 @@
+
 void main() {
     Scanner sc = new Scanner(System.in);
     IO.println("Willst du die erste Aufgabe ueberspringen? (y)");
@@ -24,14 +25,35 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
+    ueberspringen = 'n'; again='y';;;
+    IO.println("Willst du die Zusatzaufgabe a (Division) ueberspringen? (y)");
+    ueberspringen = sc.next().toLowerCase().charAt(0);
+    while (ueberspringen != 'y' && again == 'y') {
+        AufgabeZ_a(sc);
+        IO.println("Again? (y/n)");
+        again = sc.next().toLowerCase().charAt(0);
+    }
+    ueberspringen = 'n'; again='y';;;
+    IO.println("Willst du die Zusatzaufgabe f (fakultaet) ueberspringen? (y)");
+    ueberspringen = sc.next().toLowerCase().charAt(0);
+    while (ueberspringen != 'y' && again == 'y') {
+        AufgabeZ_f(sc);
+        IO.println("Again? (y/n)");
+        again = sc.next().toLowerCase().charAt(0);
+    }
 }
 void Aufgabe1(Scanner sc){
     IO.println("Lies eine ganze positive Zahl ein.");
     int n = sc.nextInt();
     int erg=0;
+    String gerade;
+    if(n%2==0) gerade ="gerade";
+    else gerade="ungerade";
+
     for(int i=1;i<=n;i++){
         erg+=i;
     }IO.println("Summe von i=0 zu "+n+" ist gleich "+erg);
+    IO.println("Deine Zahl ist "+gerade);
 
 }
 void Aufgabe2(Scanner sc){
@@ -45,4 +67,18 @@ void Aufgabe3(Scanner sc){
     int prod1=z1,prod2=z2,erg=0;
     if(z1>=0) for(;z1>0;z1--) erg+=z2;
     IO.println(prod1+" * "+prod2+" = "+erg);
+}
+void AufgabeZ_a(Scanner sc){
+    IO.println("Lies zwei ganze positive Zahlen ein.");
+    int a=sc.nextInt(),b= sc.nextInt();
+    int erg =a/b;
+    IO.println(a+" passt "+"\u001B[31m"+erg+"\u001B[0m"+" in "+b+" rein.");
+    erg=a%b;
+    IO.println("Der Rest ist "+erg);
+}
+void AufgabeZ_f(Scanner sc){
+    IO.println("Lies eine ganze positive Zahl ein.");
+    int n = sc.nextInt(),erg=1;
+    for(int i =1;n>=i;i++)erg*=i;
+    IO.println(n+"! = "+ erg);
 }

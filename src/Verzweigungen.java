@@ -29,11 +29,15 @@ void main() {
 void Aufgabe1(Scanner sc){
     IO.println("Lies eine Zahl ein: ");
     double zahl = sc.nextDouble();
+    String gerade;
+    if(zahl%2==0)gerade="gerade";
+    else gerade="ungerade";
     if (zahl < 0) IO.println("Die Zahl ist negativ.");
     else {
         if (zahl > 0) IO.println("Die Zahl ist positiv.");
         IO.println("Die Zahl ist gleich 0.");
     }
+    IO.println("Deine Zahl ist "+gerade);
 }
 void Aufgabe2 (Scanner sc){
     IO.println("Lies drei Zahlen ein");
@@ -79,6 +83,38 @@ void Aufgabe3(Scanner sc) {
         }
     }
     if(tag>0&&tag<=maxTage)gueltig=true;
-    if (gueltig==true) IO.println("Gueltiges Datum");
+    if (gueltig==true) {
+        IO.println("Gueltiges Datum");
+        Wochentag(tag,monat, jahr);
+    }
     else IO.println("Ungueltiges Datum");
+
+}
+
+String Wochentag(int tag,int monat, int jahr){
+    int tage=0;
+    for(int j=1;j>jahr;j++){
+        if((jahr%4==0&&jahr%100!=0)||jahr%400==0) tage+=366;
+        else tage+=365;
+    }
+    for(int m=1;m<monat;m++){
+        switch (monat){
+            case 1,3,5,7,9,11->tage+=31;
+            case 4,6,8,10,12->tage+=30;
+            case 2->{
+                if((jahr%4==0&&jahr%100!=0)||jahr%400==0) tage+=29;
+                else tage+=28;
+            }
+        }
+    }
+    tage+=tag-1;
+    switch (tage%7){
+        case 1 :return "Montag";
+        case 2 : return "Dienstag";
+        case 3 :return "Mittwoch";
+        case 4:return "Donnerstag";
+        case 5:return "Freitag";
+        case 6:return "Samstag";
+        default:return "Sonntag";
+    }
 }
