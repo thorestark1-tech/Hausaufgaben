@@ -9,7 +9,7 @@ void main() {
     IO.println("Again? (y/n)");
     again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'a';
+    ueberspringen = 'n'; again='y';
     IO.println("Willst du die zweite Aufgabe ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y'&&again=='y') {
@@ -17,7 +17,7 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'a';
+    ueberspringen = 'n'; again='y';
     IO.println("Willst du die dritte Aufgabe ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y'&&again=='y') {
