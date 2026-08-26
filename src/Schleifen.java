@@ -1,4 +1,5 @@
-
+String RED="\u001B[31m"; //globale variabele ANSI code um IO rot zu machen (hab ich von c++)
+String DEFAULT = "\u001B[0m";//ANSI/ASCII um den text wieder auf default farbe zu machen
 void main() {
     Scanner sc = new Scanner(System.in);
     IO.println("Willst du die erste Aufgabe ueberspringen? (y)");
@@ -72,7 +73,7 @@ void AufgabeZ_a(Scanner sc){
     IO.println("Lies zwei ganze positive Zahlen ein.");
     int a=sc.nextInt(),b= sc.nextInt();
     int erg =a/b;
-    IO.println(a+" passt "+"\u001B[31m"+erg+"\u001B[0m"+" in "+b+" rein.");
+    IO.println(a+" passt "+RED+erg+DEFAULT+" in "+b+" rein."); //
     erg=a%b;
     IO.println("Der Rest ist "+erg);
 }
