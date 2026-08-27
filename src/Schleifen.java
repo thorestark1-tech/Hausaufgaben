@@ -37,8 +37,9 @@ void main() {
     again='y';
     IO.println("Willst du die Zusatzaufgabe f (fakultaet) ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
+    AufgabeZ_f mf = new AufgabeZ_f(); //aufrufen von public voif klasse
     while (ueberspringen != 'y' && again == 'y') {
-        AufgabeZ_f(sc);
+        mf.Aufgabe(sc); //funktion teil der klasse, kann man auch unterr die selbe klasse machen
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
@@ -78,9 +79,11 @@ void AufgabeZ_a(Scanner sc){
     erg=a%b;
     IO.println("Der Rest ist "+erg);
 }
-void AufgabeZ_f(Scanner sc){
-    IO.println("Lies eine ganze positive Zahl ein.");
-    int n = sc.nextInt(),erg=1;
-    for(int i =1;n>=i;i++)erg*=i;
-    IO.println(n+"! = "+ erg);
+public static class AufgabeZ_f {
+    public void Aufgabe(Scanner sc){
+        IO.println("Lies eine ganze positive Zahl ein.");
+        int n = sc.nextInt(),erg=1;
+        for(int i =1;n>=i;i++)erg*=i;
+        IO.println(n+"! = "+ erg);
+    }
 }
