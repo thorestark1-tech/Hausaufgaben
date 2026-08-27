@@ -10,7 +10,7 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'n'; again='y';;;
+    again='y';
     IO.println("Willst du die zweite Aufgabe ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y' && again == 'y') {
@@ -18,7 +18,7 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'n'; again='y';;;
+    again='y';
     IO.println("Willst du die dritte Aufgabe ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y' && again == 'y') {
@@ -26,7 +26,7 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'n'; again='y';;;
+    again='y';
     IO.println("Willst du die Zusatzaufgabe a (Division) ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y' && again == 'y') {
@@ -34,7 +34,7 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'n'; again='y';;;
+    again='y';
     IO.println("Willst du die Zusatzaufgabe f (fakultaet) ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y' && again == 'y') {
@@ -65,9 +65,10 @@ void Aufgabe2(Scanner sc){
 void Aufgabe3(Scanner sc){
     IO.println("Lies zwei Zahlen ein.");
     int z1 = sc.nextInt(), z2=sc.nextInt();
-    int prod1=z1,prod2=z2,erg=0;
+    int prod1=z1;
+    int erg=0;
     if(z1>=0) for(;z1>0;z1--) erg+=z2;
-    IO.println(prod1+" * "+prod2+" = "+erg);
+    IO.println(prod1+" * "+ z2 +" = "+erg);
 }
 void AufgabeZ_a(Scanner sc){
     IO.println("Lies zwei ganze positive Zahlen ein.");

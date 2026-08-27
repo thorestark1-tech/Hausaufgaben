@@ -1,6 +1,4 @@
 public class taschenrechner {
-    public taschenrechner() {
-    }
 
     static void main(String[] args) {
         String sum = "Summe: ";

@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 void main() {
     Scanner sc = new Scanner(System.in);
@@ -9,7 +10,7 @@ void main() {
     IO.println("Again? (y/n)");
     again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'n'; again='y';
+    again='y';
     IO.println("Willst du die zweite Aufgabe ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y'&&again=='y') {
@@ -17,7 +18,7 @@ void main() {
         IO.println("Again? (y/n)");
         again = sc.next().toLowerCase().charAt(0);
     }
-    ueberspringen = 'n'; again='y';
+    again='y';
     IO.println("Willst du die dritte Aufgabe ueberspringen? (y)");
     ueberspringen = sc.next().toLowerCase().charAt(0);
     while (ueberspringen != 'y'&&again=='y') {
@@ -87,7 +88,7 @@ void Aufgabe3(Scanner sc) {
     }
     if(tag>0&&tag<=maxTage)gueltig=true;
     if (gueltig) {
-        IO.println("Gueltiges Datum");
+        IO.println("Der "+tag+"."+monat+"."+jahr+" ist ein gueltiges Datum");
         String wochentag = Wochentag(tag,monat, jahr);
         IO.println("Es ist ein "+wochentag);
     }
@@ -97,28 +98,32 @@ void Aufgabe3(Scanner sc) {
 
 String Wochentag(int tag,int monat, int jahr){
     int tage=0;
-    for(int j=1;j>jahr;j++){
-        if((jahr%4==0&&jahr%100!=0)||jahr%400==0) tage+=366;
-        else tage+=365;
+    for(int j = 1; j<=jahr; j++){
+        if ((j % 4 == 0 && j % 100 != 0) || j % 400 == 0) {
+            tage += 366;
+        } else {
+            tage += 365;
+        }
     }
     for(int m=1;m<monat;m++){
-        switch (monat){
-            case 1,3,5,7,9,11->tage+=31;
-            case 4,6,8,10,12->tage+=30;
+        switch (m){
+            case 1,3,5,7,8,10,12->tage+=31;
+            case 4,6,9,11->tage+=30;
             case 2->{
-                if((jahr%4==0&&jahr%100!=0)||jahr%400==0) tage+=29;
+                if((jahr % 4 == 0 && jahr % 100 != 0) || jahr % 400 == 0) tage+=29;
                 else tage+=28;
             }
         }
     }
     tage+=tag-1;
-    switch (tage%7){
-        case 1 :return "Montag";
-        case 2 : return "Dienstag";
-        case 3 :return "Mittwoch";
-        case 4:return "Donnerstag";
-        case 5:return "Freitag";
-        case 6:return "Samstag";
-        default:return "Sonntag";
-    }
+
+    return switch (tage % 7) {
+        case 1 -> "Montag";
+        case 2 -> "Dienstag";
+        case 3 -> "Mittwoch";
+        case 4 -> "Donnerstag";
+        case 5 -> "Freitag";
+        case 6 -> "Samstag";
+        default -> "Sonntag";
+    };
 }

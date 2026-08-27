@@ -13,7 +13,7 @@ void main (){
         IO.println("Wie viel wiegen Sie (in kg)?");
         Gewicht = sc.nextInt();
         IO.println("Wie gross sind Sie (in m)?");
-        String eingabe = sc.next(); //weil die lokale Schreibweise z.B 1,7 anstatt 1.7 ist, muss ich das verändern da der rest mit . rechnet
+        String eingabe = sc.next(); //weil die lokale Schreibweise z.B. 1,7 anstatt 1.7 ist, muss ich das verändern da der rest mit . rechnet
         eingabe = eingabe.replace(',','.'); //hier replace ich das , mit einem .
         Groesse = Double.parseDouble(eingabe); //double.parseDouble() wandelt einen String in einen Double um
         bmi = rechner(Groesse, Gewicht);
