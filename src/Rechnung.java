@@ -18,7 +18,7 @@ public class Rechnung{
 
     boolean fak(int z1,int ein){
         int erg =1;
-        for(int i =1;i<z1;i++)erg*=i;
+        for(int i =1;i<=z1;i++)erg*=i;
         return ein == erg;
     }
 }

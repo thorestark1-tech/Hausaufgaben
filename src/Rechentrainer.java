@@ -5,7 +5,7 @@ void main() {
     Zufallszahl Z= new Zufallszahl();
     Rechnung R =new Rechnung();
     int Score=0, erg, Aufgabe=0;
-    for(int i=0;i<10;i++) {
+    for(int i=0;i<=10;i++) {
         int a = Z.z1();
         int b =Z.z2();
         IO.println("Sie habem "+Score+" Punkte");
@@ -20,7 +20,7 @@ void main() {
                 IO.println(Aufgabe+")   "+a+" + "+b+" =");
                 erg = sc.nextInt();
                 if (R.add(a,b,erg))Score +=richtig();
-                else Score += falsch();
+                else Score += 2*falsch();
             }
             case 7->{
                 IO.println(Aufgabe+")   "+a+" - "+b+" =");
@@ -44,7 +44,8 @@ void main() {
         }Aufgabe++;
     }
     IO.print("Sie haben einen Punktestand von "+Score+" erreicht.");
-    if(Score>0)IO.print(" Sie sind nicht komplett behindert!");
+    if (Score>=100)IO.print("Meine Güte, sie sindd ja ein Genie!!");
+    else if(Score>0)IO.print(" Sie sind nicht komplett behindert!");
     else IO.print(" Sie sind eine Schande für die Menschheit!");
 }
 
@@ -64,10 +65,10 @@ public static class Zufallszahl {
     }
 }
 int richtig(){
-    IO.println("Rivhtig Supiii! Du bekommst 10 Punkte");
+    IO.println("Rivhtig Supiii! Du bekommst 10 Punkte. (+20 bei fakultät)");
     return 10;
 }
 int falsch(){
-    IO.println("Faaaaalsch du Opfer. Minus 10 Punkte");
+    IO.println("Faaaaalsch du Opfer. Minus 10 Punkte. (-20 bei Addition)");
     return -10;
 }
