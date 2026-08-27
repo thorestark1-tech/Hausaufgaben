@@ -26,6 +26,7 @@ void main() {
         again = sc.next().toLowerCase().charAt(0);
     }
 }
+
 void Aufgabe1(Scanner sc){
     IO.println("Lies eine Zahl ein: ");
     double zahl = sc.nextDouble();
@@ -39,6 +40,7 @@ void Aufgabe1(Scanner sc){
     }
     IO.println("Deine Zahl ist "+gerade);
 }
+
 void Aufgabe2 (Scanner sc){
     IO.println("Lies drei Zahlen ein");
     double z1 = sc.nextDouble(), z2= sc.nextDouble(), z3= sc.nextDouble();
@@ -52,14 +54,15 @@ void Aufgabe2 (Scanner sc){
         System.out.println(z1 + " " + z3 + " " + z2);
     } else if (z2 >= z1 && z1 >= z3) {
         System.out.println(z2 + " " + z1 + " " + z3);
-    } else if (z2 >= z3 && z3 >= z1) {
+    } else if (z2 >= z3) {
         System.out.println(z2 + " " + z3 + " " + z1);
-    } else if (z3 >= z1 && z1 >= z2) {
+    } else if (z1 >= z2) {
         System.out.println(z3 + " " + z1 + " " + z2);
     } else {
         System.out.println(z3 + " " + z2 + " " + z1);
     }
 }
+
 void Aufgabe3(Scanner sc) {
     int monat,jahr,tag,maxTage;
     boolean gueltig =false;
@@ -83,9 +86,10 @@ void Aufgabe3(Scanner sc) {
         }
     }
     if(tag>0&&tag<=maxTage)gueltig=true;
-    if (gueltig==true) {
+    if (gueltig) {
         IO.println("Gueltiges Datum");
-        Wochentag(tag,monat, jahr);
+        String wochentag = Wochentag(tag,monat, jahr);
+        IO.println("Es ist ein "+wochentag);
     }
     else IO.println("Ungueltiges Datum");
 
