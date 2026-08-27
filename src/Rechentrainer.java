@@ -10,35 +10,35 @@ void main() {
         int b =Z.z2();
         IO.println("Sie habem "+Score+" Punkte");
         switch (R.z1()) {
-            case 1,2->{
+            case 1,2,3,4->{
                 IO.println(Aufgabe+")   "+a+" * "+b+" =");
                 erg = sc.nextInt();
                 if (R.mult(a,b,erg)) Score +=richtig();
                 else Score+=falsch();
             }
-            case 3->{
+            case 5,6->{
                 IO.println(Aufgabe+")   "+a+" + "+b+" =");
                 erg = sc.nextInt();
                 if (R.add(a,b,erg))Score +=richtig();
                 else Score += falsch();
             }
-            case 4->{
+            case 7->{
                 IO.println(Aufgabe+")   "+a+" - "+b+" =");
                 erg = sc.nextInt();
                 if (R.minus1(a,b,erg))Score +=richtig();
                 else Score += falsch();
             }
-            case 5->{
+            case 8->{
                 IO.println(Aufgabe+")   "+b+" - "+a+" =");
                 erg = sc.nextInt();
                 if (R.minus2(a,b,erg))Score +=richtig();
                 else Score += falsch();
             }
-            case 6 -> {
+            case 9 -> {
                 a=Z.z3();
                 IO.println(Aufgabe+")   "+a+"!");
                 erg= sc.nextInt();
-                if (R.fak(a,erg))Score +=richtig();
+                if (R.fak(a,erg))Score +=2*richtig();
                 else Score += falsch();
             }
         }Aufgabe++;

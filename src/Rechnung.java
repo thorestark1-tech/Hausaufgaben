@@ -1,10 +1,9 @@
 public class Rechnung{
     int z1() {
-        int min = 1, max = 6;
+        int min = 1, max = 9;
         return (int) (Math.random() * (max - min + 1)) + min;
     }
     boolean mult(int a, int b,int erg){
-        IO.println("ficken");
         return a * b == erg;
     }
     boolean add(int a, int b, int erg){
