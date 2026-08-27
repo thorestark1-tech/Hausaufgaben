@@ -11,25 +11,25 @@ void main() {
         IO.println("Sie habem "+Score+" Punkte");
         switch (R.z1()) {
             case 1,2->{
-                IO.println(Aufgabe+")   "+a+" * "+b+" ?");
+                IO.println(Aufgabe+")   "+a+" * "+b+" =");
                 erg = sc.nextInt();
                 if (R.mult(a,b,erg)) Score +=richtig();
                 else Score+=falsch();
             }
             case 3->{
-                IO.println(Aufgabe+")   "+a+" + "+b+" ?");
+                IO.println(Aufgabe+")   "+a+" + "+b+" =");
                 erg = sc.nextInt();
                 if (R.add(a,b,erg))Score +=richtig();
                 else Score += falsch();
             }
             case 4->{
-                IO.println(Aufgabe+")   "+a+" - "+b+" ?");
+                IO.println(Aufgabe+")   "+a+" - "+b+" =");
                 erg = sc.nextInt();
                 if (R.minus1(a,b,erg))Score +=richtig();
                 else Score += falsch();
             }
             case 5->{
-                IO.println(Aufgabe+")   "+b+" - "+a+" ?");
+                IO.println(Aufgabe+")   "+b+" - "+a+" =");
                 erg = sc.nextInt();
                 if (R.minus2(a,b,erg))Score +=richtig();
                 else Score += falsch();
@@ -43,7 +43,7 @@ void main() {
             }
         }Aufgabe++;
     }
-    IO.println("Sie haben einen Punktestand von "+Score+"erreicht.");
+    IO.print("Sie haben einen Punktestand von "+Score+" erreicht.");
     if(Score>0)IO.print(" Sie sind nicht komplett behindert!");
     else IO.print(" Sie sind eine Schande für die Menschheit!");
 }
