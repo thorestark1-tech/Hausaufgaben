@@ -1,14 +1,19 @@
 import java.util.Scanner;
+String RED="\u001B[31m"; //globale variabele ANSI code um IO rot zu machen (hab ich von c++)
+String GREEN="\u001B[32m";
+String ORANGE="\u001B[33m";
+String DEFAULT = "\u001B[0m";//ANSI/ASCII um den text wieder auf default farbe zu machen
 
 void main() {
     Scanner sc = new Scanner(System.in);
     Zufallszahl Z= new Zufallszahl();
     Rechnung R =new Rechnung();
     int Score=0, erg, Aufgabe=0;
-    for(int i=0;i<=10;i++) {
+    for(int i=1;i<=10;i++) {
         int a = Z.z1();
         int b =Z.z2();
-        IO.println("Sie habem "+Score+" Punkte");
+        Aufgabe++;
+        IO.println("Sie habem "+Score +" Punkte");
         switch (R.z1()) {
             case 1,2,3,4->{
                 IO.println(Aufgabe+")   "+a+" * "+b+" =");
@@ -41,12 +46,28 @@ void main() {
                 if (R.fak(a,erg))Score +=2*richtig();
                 else Score += falsch();
             }
-        }Aufgabe++;
+            case 10->{
+                a=Z.z3();
+                b=Z.z4();
+                IO.println(Aufgabe+")   Die Summe aller i von "+b+" bis "+a);
+                erg= sc.nextInt();
+                if (R.sujm(a,b,erg))Score +=2*richtig();
+                else Score += falsch();
+            }
+        }
     }
-    IO.print("Sie haben einen Punktestand von "+Score+" erreicht.");
-    if (Score>=100)IO.print("Meine Güte, sie sindd ja ein Genie!!");
-    else if(Score>0)IO.print(" Sie sind nicht komplett behindert!");
-    else IO.print(" Sie sind eine Schande für die Menschheit!");
+    if (Score>=100){
+        IO.print("Sie haben einen Punktestand von "+ORANGE+Score+DEFAULT+" erreicht.");
+        IO.print(" Meine Güte, ssie sind ja ein Genie!!");
+    }
+    else if(Score>0){
+        IO.print("Sie haben einen Punktestand von "+GREEN+Score+DEFAULT+" erreicht.");
+        IO.print(" Sie sind nicht komplett behindert!");
+    }
+    else {
+        IO.print("Sie haben einen Punktestand von "+RED+Score+DEFAULT+" erreicht.");
+        IO.print(" Sie sind eine Schande für die Menschheit!");
+    }
 }
 
 public static class Zufallszahl {
@@ -60,15 +81,20 @@ public static class Zufallszahl {
         return (int) (Math.random() * (max - min + 1)) + min;
     }
     int z3() {
-        int min = 1, max = 5;
+        int min = 3, max = 8;
         return (int) (Math.random() * (max - min + 1)) + min;
     }
+    int z4() {
+        int min = 0, max = 3;
+        return (int) (Math.random() * (max - min + 1)) + min;
+    }
+
 }
 int richtig(){
-    IO.println("Rivhtig Supiii! Du bekommst 10 Punkte. (+20 bei fakultät)");
+    IO.println("Rivhtig Supiii! Du bekommst 10 Punkte. (+20 bei Fakultät, Summe)");
     return 10;
 }
 int falsch(){
-    IO.println("Faaaaalsch du Opfer. Minus 10 Punkte. (-20 bei Addition)");
-    return -10;
+    IO.println("Faaaaalsch du Opfer. Minus 20 Punkte. (-40 bei Addition)");
+    return -20;
 }
