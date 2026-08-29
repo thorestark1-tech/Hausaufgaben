@@ -1,7 +1,7 @@
 import java.util.Scanner;
 String RED="\u001B[31m"; //globale variabele ANSI code um IO rot zu machen (hab ich von c++)
-String GREEN="\u001B[32m";
-String ORANGE="\u001B[33m";
+String GREEN="\u001B[32m";//sollte grün sein
+String ORANGE="\u001B[33m";//dachte das wäre gelb lol
 String DEFAULT = "\u001B[0m";//ANSI/ASCII um den text wieder auf default farbe zu machen
 
 void main() {
