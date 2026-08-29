@@ -3,11 +3,15 @@ String RED="\u001B[31m"; //globale variabele ANSI code um IO rot zu machen (hab 
 String GREEN="\u001B[32m";//sollte grün sein
 String ORANGE="\u001B[33m";//dachte das wäre gelb lol
 String DEFAULT = "\u001B[0m";//ANSI/ASCII um den text wieder auf default farbe zu machen
+boolean falsch=false;
+
 
 void main() {
     Scanner sc = new Scanner(System.in);
     Zufallszahl Z= new Zufallszahl();
     Rechnung R =new Rechnung();
+//    int value=10;
+//    Z.rand(value);
     int Score=0, erg, Aufgabe=0;
     for(int i=1;i<=10;i++) {
         int a = Z.z1();
@@ -57,17 +61,18 @@ void main() {
         }
     }
     if (Score>=100){
-        IO.print("Sie haben einen Punktestand von "+ORANGE+Score+DEFAULT+" erreicht.");
-        IO.print(" Meine Güte, ssie sind ja ein Genie!!");
+        IO.print("Sie haben einen Punktestand von "+ORANGE+Score+DEFAULT+" erreicht. ");
+        IO.print("Meine Güte, ssie sind ja ein Genie!! ");
     }
     else if(Score>0){
-        IO.print("Sie haben einen Punktestand von "+GREEN+Score+DEFAULT+" erreicht.");
-        IO.print(" Sie sind nicht komplett behindert!");
+        IO.print("Sie haben einen Punktestand von "+GREEN+Score+DEFAULT+" erreicht. ");
+        IO.print("Sie sind nicht komplett behindert! ");
     }
     else {
-        IO.print("Sie haben einen Punktestand von "+RED+Score+DEFAULT+" erreicht.");
-        IO.print(" Sie sind eine Schande für die Menschheit!");
+        IO.print("Sie haben einen Punktestand von "+RED+Score+DEFAULT+" erreicht. ");
+        IO.print("Sie sind eine Schande für die Menschheit! ");
     }
+    if(!falsch) IO.print("Keine fahler, gut gemacht! ");
 }
 
 public static class Zufallszahl {
@@ -88,6 +93,10 @@ public static class Zufallszahl {
         int min = 0, max = 3;
         return (int) (Math.random() * (max - min + 1)) + min;
     }
+//    void rand(int value){
+//        final int result=2*value;
+//
+//    }// log point ist bei debug run als string
 
 }
 int richtig(){
@@ -96,5 +105,6 @@ int richtig(){
 }
 int falsch(){
     IO.println("Faaaaalsch du Opfer. Minus 20 Punkte. (-40 bei Addition)");
+    falsch =true;
     return -20;
 }
