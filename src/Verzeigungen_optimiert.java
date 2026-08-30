@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import static java.lang.System.out;
 
 public class Verzeigungen_optimiert {
     void main(){
@@ -12,7 +13,8 @@ public class Verzeigungen_optimiert {
 
     void Aufgabe_Ausfuehren(Scanner sc, int a){
         Verzweigungen V = new Verzweigungen();
-        IO.println("Willst du die Aufgabe "+a+" ueberspringen?");
+        if(a<=3)out.println("Willst du die Aufgabe "+a+". ueberspringen? (y/n)");
+        else out.println("Willst du die "+(a-3)+". Zusatzaufgabe ueberspringen? (y/n)");
         char ueberspringen = sc.next().toLowerCase().charAt(0);
         char again = 'y';
         if(ueberspringen=='y') return;
@@ -21,7 +23,7 @@ public class Verzeigungen_optimiert {
             if (a == 2) V.A2(sc);
             if (a == 3) V.A3(sc);
             if (a == 4) V.Zd(sc);
-            IO.println("Again? (y/n)");
+            out.println("Again? (y/n)");
             again = sc.next().toLowerCase().charAt(0);
         }
     }
