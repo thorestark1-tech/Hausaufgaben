@@ -85,8 +85,8 @@ public class Verzweigungen {
         jahr = sc.nextInt();
 
         switch (monat) {
-            case 1, 3, 5, 7, 9, 11 -> maxTage = 31;
-            case 4, 6, 8, 10, 12 -> maxTage = 30;
+            case 1, 3, 5, 7,8 ,10, 12 -> maxTage = 31;
+            case 4, 6, 9, 11 -> maxTage = 30;
             case 2 -> {
                 if ((jahr % 4 == 0 && jahr % 100 != 0) || jahr % 400 == 0) maxTage = 29;
                 else maxTage = 28;

@@ -1,5 +1,5 @@
 public class Rechnung{
-
+        int erg;
     void main(){
 
     }
@@ -8,27 +8,27 @@ public class Rechnung{
         return (int) (Math.random() * (max - min + 1)) + min;
 
     }
-    boolean mult(int a, int b,int erg){
-        return a * b == erg;
+    int mult(int a, int b){
+        return  a*b;
     }
-    boolean add(int a, int b, int erg){
-        return a + b == erg;
+    int add(int a, int b){
+        return a+b;
     }
-    boolean minus1(int a, int b, int erg){
-        return a - b == erg;
+    int minus1(int a, int b){
+        return  a-b;
     }
-    boolean minus2(int a, int b, int erg){
-        return b - a == erg;
+    int minus2(int a, int b){
+        return  b-a;
     }
 
-    boolean fak(int z1,int ein){
+    int fak(int z1){
         int erg = 1;
         for(int i =  1;i<=z1;i++)erg*=i;
-        return ein == erg;
+        return erg;
     }
-    boolean sujm(int a,int b,int ein){
-        int erg = 1;
-        for(int i =  b;i<=a;i++)erg+=i;
-        return ein == erg;
+    int sujm(int a,int b){
+        int erg = 0;
+        for(int i = b;i<=a;i++)erg+=i;
+        return  erg;
     }
 }
