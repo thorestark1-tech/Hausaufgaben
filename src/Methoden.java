@@ -49,6 +49,8 @@ public class Methoden {
     void uebung2(int anzahl,String pnis){
         for(int i= 0;i<=anzahl;i++)out.println(pnis);
     }
+
+
     void uebung3() throws InterruptedException {
         int[] w;
         do {
