@@ -4,7 +4,7 @@ Scanner sc=new Scanner(System.in);
 void main() {
     out.println("Gib eine Zahl ein.");
     int a= sc.nextInt();
-    out.println(fak(a));
+    //out.println(fak(a));
     out.println(fibo(a));
     out.println(qwuerr(a));
     out.println("Gib zwei Zahlen ein.");
