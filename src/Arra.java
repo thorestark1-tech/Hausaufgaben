@@ -136,6 +136,7 @@ public class Arra {
         out.println("Größter Wert: " + groesste);
     }
     void ausgenen(int[] a) {
+        //noinspection ForLoopReplaceableByForEach
         for (int i = 0; i < a.length; i++) {
             out.print(a[i] + " ");
         }
