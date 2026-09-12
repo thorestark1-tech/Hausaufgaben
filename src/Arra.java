@@ -4,8 +4,9 @@ import static java.lang.System.out;
 
 public class Arra {
     Scanner sc = new Scanner(System.in);
+    Arra A=new Arra();
     void main() {
-        wuerfel();
+        A.wuerfel();
         A1();
         
         int[] a = {1, -2, 5, -7, -3, 8};
@@ -142,8 +143,7 @@ public class Arra {
     }
     void wuerfel(){
         out.println("Wie viele wuerfel sollen geworfen werden?");
-        int a =100;
-        a= sc.nextInt();
+        int a = sc.nextInt();
         int[] w=new int[a];
         for (int j = 0; j < w.length; j++) w[j] = (int)(Math.random() * 6) + 1;
 
