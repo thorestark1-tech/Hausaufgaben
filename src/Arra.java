@@ -3,9 +3,9 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class Arra {
-
+    Scanner sc = new Scanner(System.in);
     void main() {
-
+        wuerfel();
         A1();
         
         int[] a = {1, -2, 5, -7, -3, 8};
@@ -61,8 +61,6 @@ public class Arra {
 
     void A3() {
 
-        Scanner sc = new Scanner(System.in);
-
         int[] zahlen = new int[10];
         
         for (int i = 0; i < zahlen.length; i++) {
@@ -100,8 +98,6 @@ public class Arra {
     }
 
     void A4() {
-
-        Scanner sc = new Scanner(System.in);
 
         out.print("Wie viele Werte möchtest du eingeben? ");
         int anzahl = sc.nextInt();
@@ -143,5 +139,26 @@ public class Arra {
             out.print(a[i] + " ");
         }
         out.println();
+    }
+    void wuerfel(){
+        out.println("Wie viele wuerfel sollen geworfen werden?");
+        int a =100;
+        a= sc.nextInt();
+        int[] w=new int[a];
+        for (int j = 0; j < w.length; j++) w[j] = (int)(Math.random() * 6) + 1;
+
+        for (int i = 1; i <= 6; i++) {
+            out.println(i + ": " + anzahlZahl(i, w)*100.00/a+"%");
+            out.println(i + ": " + anzahlZahl(i, w));
+        }
+    }
+    int anzahlZahl(int a,int[]b){
+        int anzahl=0;
+        for (int j : b) {
+            if (j == a) {
+                anzahl++;
+            }
+        }
+        return anzahl;
     }
 }
