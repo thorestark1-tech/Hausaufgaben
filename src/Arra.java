@@ -4,9 +4,9 @@ import static java.lang.System.out;
 
 public class Arra {
     Scanner sc = new Scanner(System.in);
-    Arra A=new Arra();
+
     void main() {
-        A.wuerfel();
+        wuerfel();
         A1();
         
         int[] a = {1, -2, 5, -7, -3, 8};
@@ -102,7 +102,7 @@ public class Arra {
 
         out.print("Wie viele Werte möchtest du eingeben? ");
         int anzahl = sc.nextInt();
-
+        float [] Wert=new float[anzahl];
         float summe = 0;
         float kleinste = 0;
         float groesste = 0;
@@ -110,28 +110,28 @@ public class Arra {
         for (int i = 0; i < anzahl; i++) {
 
             out.print("Wert " + (i + 1) + ": ");
-            float wert = sc.nextFloat();
+            Wert[i] = sc.nextFloat();
 
-            summe += wert;
+            summe += Wert[i];
 
             if (i == 0) {
-                kleinste = wert;
-                groesste = wert;
+                kleinste = Wert[i];
+                groesste = Wert[i];
             } else {
 
-                if (wert < kleinste) {
-                    kleinste = wert;
+                if (Wert[i] < kleinste) {
+                    kleinste = Wert[i];
                 }
 
-                if (wert > groesste) {
-                    groesste = wert;
+                if (Wert[i] > groesste) {
+                    groesste = Wert[i];
                 }
             }
         }
 
-        float A4 = summe / anzahl;
+        float Mittelwer = summe / anzahl;
 
-        out.println("Milltelwert: " + A4);
+        out.println("Milltelwert: " + Mittelwer);
         out.println("Kleinster Wert: " + kleinste);
         out.println("Größter Wert: " + groesste);
     }
